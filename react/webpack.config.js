@@ -5,12 +5,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.jsx'),
   output: {
-    path:  path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/index.html')
+      template: path.resolve(__dirname, 'src/index.html'),
     }),
   ],
   module: {
@@ -28,5 +28,5 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     port: 3000,
-  }
+  },
 };
