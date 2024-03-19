@@ -1,0 +1,38 @@
+# See https://eslint.org/docs/latest/use/configure/
+
+{
+  "root": true, # prevents eslint from travelling into parent directories
+  "parser": "espree", # default parser
+  "plugins": [
+    "react",
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime", # React 18+ uses the jsx automatic runtime
+    "plugin:@typescript-eslint/recommended",
+  ],
+  "globals": {
+     "document": true,
+  },
+  "rules": {
+    "react/prop-types": "off",
+  },
+  "overrides": [
+    {
+      "files": [ "**/*.ts", "**/*.tsx" ],
+      "parser": "@typescript-eslint/parser",
+    },
+    {
+      "files": [ "**/*.jsx" ], # jsx files not covered by default
+      "parser": "espree",
+    },
+  ],
+  "parserOptions": { # options geared for typical React setups
+    "sourceType": "module",
+    "ecmaVersion": "latest",
+    "ecmaFeatures": {
+      "jsx": true,
+    },
+  },
+}
